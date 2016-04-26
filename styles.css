@@ -1,0 +1,140 @@
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+	text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+
+#main{
+	margin: 0 auto;
+	width: 50em;
+}
+
+#pageTitle{
+	width: 100%;
+}
+
+#pageTitle h1{
+	text-align: center;
+}
+
+.innerGeneral{
+	border: 1px solid black;
+}
+
+#mainInner{
+	display: flex;
+	margin-top: 5%;
+}
+
+#innerLeft{
+	width: 29em;
+}
+
+#innerRight{
+	margin-left: 9%;
+	width: 20em;
+}
+
+#myEarningsInfo{
+	margin-top: 15%;
+}
+
+.detailsTitle{
+	border-bottom: 1px solid black;
+}
+
+#resetBtn{
+	float: right;
+    margin-top: 4%;
+}
+
+#mealDetailsForm{
+	padding-left: 9%;
+	padding-right: 9%;
+}
+
+#detailsBtns{
+	width: 100%;
+    text-align: center;
+    margin-top: 30%;
+}
+
+.deetsInput{
+	margin-top: 5%;
+}
+
+.deetsInputReal{
+	float: left;
+}
+
+.percentages{
+	width: 4em;
+}
+
+.rightDivPadding{
+	padding-right: 9%;
+	padding-left: 9%;
+	padding-bottom: 9%;
+}
+
+.rightDivPadding label{
+	display: block;
+}
+
+.tableStyle{
+	padding-left: 9%;
+	padding-bottom: 9%;
+}
+
+.tr_bottom_border td{
+	border-bottom: 1px solid black;
+}
+
+.errorMsg{
+	background: maroon;
+	color: white;
+	padding: 5px;
+	margin-top: 30px;
+	font-size: 11px;
+	border-radius: 5px;
+	position: absolute;
+	animation: fadeIn ease-in 0.6s;
+}
+
+.errorMsg:after, .errorMsg:before{
+	bottom: 100%;
+	left: 74%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.errorMsg:after{
+	border-bottom-color: maroon;
+	border-width: 5px;
+	margin-left: -80px;
+}
+
+.buttonHover:hover{
+	cursor: pointer;
+}
+
