@@ -1,0 +1,19 @@
+<div class = "innerGeneral">
+	<h2 class = "detailsTitle">My Earnings Info</h2>
+	<table class = "tableStyle">
+		<tr>
+			<td><label>Tip Total: </label></td>
+			<td ng-bind = "vm.tipTotal | currency"></td>
+		</tr>
+		<tr style = "height: 4em;">
+			<td><label>Meal count: </label></td>
+			<td ng-bind = "vm.mealCount"></td>
+		</tr>
+		<tr>
+			<td><label>Average Tip Per Meal: </label></td>
+			<td ng-bind = "vm.avgTipPerMeal | currency"></td>
+		</tr>
+	</table>
+</div>
+
+<input type = "reset" ng-click = "vm.reset(waitStaffForm)" class = "buttonHover" value = "Reset"/>

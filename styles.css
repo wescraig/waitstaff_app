@@ -7,6 +7,15 @@ body{
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+body a{
+	margin-left: 10px;
+}
+
+body a:hover{
+	color: #ff66ff;
 }
 
 h2{
@@ -17,6 +26,11 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{
 	-webkit-appearance: none;
 	margin: 0;
+}
+
+.viewPosition{
+	width: 75%;
+	margin: 0 auto;
 }
 
 
@@ -33,8 +47,11 @@ input[type=number]::-webkit-outer-spin-button{
 	text-align: center;
 }
 
+
 .innerGeneral{
 	border: 1px solid black;
+	margin: 4% auto;
+	width: 50%;
 }
 
 #mainInner{
@@ -49,10 +66,6 @@ input[type=number]::-webkit-outer-spin-button{
 #innerRight{
 	margin-left: 9%;
 	width: 20em;
-}
-
-#myEarningsInfo{
-	margin-top: 15%;
 }
 
 .detailsTitle{
@@ -72,7 +85,8 @@ input[type=number]::-webkit-outer-spin-button{
 #detailsBtns{
 	width: 100%;
     text-align: center;
-    margin-top: 30%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .deetsInput{

@@ -7,90 +7,21 @@
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>	
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 		<script src="https://code.angularjs.org/1.4.9/angular-messages.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
 		<script src = "controllers.js" type = "text/javascript"></script>
 	</head>
 	<body ng-app = "waitApp">
-		<div id = "main" ng-controller = "waitStaffCtrl as vm">
-			<div id = "pageTitle">
-				<h1>Waitstaff Calculator</h1>
-			</div>
-			<div id = "mainInner" >	
-				<div id = "innerLeft" class = "innerGeneral">
-					<h2 class = "detailsTitle"> Enter the Meal Details</h2>
-					<form id = "mealDetailsForm" name = "waitStaffForm" novalidate>
-						<table>
-							<tr>
-								<td><label>Base Meal Price: $</label></td>
-								<td><input name = "basePrice" class = "deetsInputReal" type = "number" step = "0.01" ng-bind = "vm.basePrice" ng-model = "vm.basePrice" required/>
-									<div class = "errorMsg" ng-if = "vm.interacted(waitStaffForm, waitStaffForm.basePrice)" ng-messages = "waitStaffForm.basePrice.$error">
-										<span ng-message = "required">Please enter a base price.</span>
-									</div>
-								</td>
-							</tr>
-							<tr style  = "height: 8em;">
-								<td><label>Tax Rate: %</label></td>
-								<td><input name = "taxRate" class = "deetsInputReal percentages" type = "number" step = "0.01" ng-bind = "vm.taxRate" ng-model = "vm.taxRate" required/>
-									<div class = "errorMsg" ng-if = "vm.interacted(waitStaffForm, waitStaffForm.taxRate)" ng-messages = "waitStaffForm.taxRate.$error">
-										<span ng-message = "required">Please enter a tax rate.</span>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td><label>Tip Percentage: %</label></td>
-								<td><input name = "tipPercent" class = "deetsInputReal percentages" type = "number" step = "0.01" ng-bind = "vm.tipPercent" ng-model = "vm.tipPercent" required/>
-									<div class = "errorMsg" ng-if = "vm.interacted(waitStaffForm, waitStaffForm.tipPercent)" ng-messages = "waitStaffForm.tipPercent.$error">
-										<span ng-message = "required">Please enter a tip percent.</span>
-									</div>
-								</td>
-							</tr>
-						</table>
-						<div id = "detailsBtns">
-							<input class = "buttonHover" type = "button" ng-click = "vm.submitMeal(waitStaffForm)" value = "Submit"/>
-							<input class = "buttonHover" type = "reset" ng-click = "vm.cancel(waitStaffForm)" value = "Cancel"/>
-						</div>
-					
-				</div>
-				<div id = "innerRight">
-					<div id = "customerCharges" class = "innerGeneral">
-						<h2 class = "detailsTitle">Customer Charges</h2>
-						<table class = "tableStyle">
-							<tr>
-								<td><label>Subtotal: </label></td>
-								<td ng-bind = "vm.subtotal | currency"></td>
-							</tr>
-							<tr style = "height: 4em;">
-								<td><label>Tip: </label></td>
-								<td ng-bind = "vm.tip | currency"></td>
-							</tr>
-							<tr>
-								<td><label>Total: </label></td>
-								<td ng-bind = "vm.total | currency"></td>
-							</tr>
-						</table>
-					</div>
-					<div id = "myEarningsInfo" class = "innerGeneral">
-						<h2 class = "detailsTitle">My Earnings Info</h2>
-						<table class = "tableStyle">
-							<tr>
-								<td><label>Tip Total: </label></td>
-								<td ng-bind = "vm.tipTotal | currency"></td>
-							</tr>
-							<tr style = "height: 4em;">
-								<td><label>Meal count: </label></td>
-								<td ng-bind = "vm.mealCount"></td>
-							</tr>
-							<tr>
-								<td><label>Average Tip Per Meal: </label></td>
-								<td ng-bind = "vm.avgTipPerMeal | currency"></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
+		<div id = "pageTitle">
+			<h1>Waitstaff Calculator</h1>
+		</div>
 
-			<input type = "reset" id = "resetBtn" ng-click = "vm.reset(waitStaffForm)" class = "buttonHover" value = "Reset"/>
-			</form>
-		</div>	
+		<div id = "navLinks">
+			<a ng-href = "#/">Home</a>
+			<a ng-href = "#/new_meal">New Meal</a>
+			<a ng-href = "#/my_earnings">My Earnings</a>
+		<div>
+		
+		<div class = "viewPosition" ng-view></div>
 
 
 	<body>
