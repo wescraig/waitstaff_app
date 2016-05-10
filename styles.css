@@ -27,10 +27,50 @@ input[type=number]::-webkit-outer-spin-button{
 	-webkit-appearance: none;
 	margin: 0;
 }
+.loading{
+	height: 100%;
+}
+
+.loading:before{
+	position: absolute;
+	left: 0;
+	content: "";
+	bottom: 0;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	background: rgba(255, 255, 255, 0.9) no-repeat center center;
+	background-image: url('loading-animation.gif');
+}
 
 .viewPosition{
 	width: 75%;
 	margin: 0 auto;
+}
+
+.animate-view{
+	position: relative;
+}
+
+
+.animate-view.ng-leave{
+	transition: 0.5s linear all;
+	left: 0;
+	opacity: 1;
+}
+
+.animate-view.ng-leave.ng-leave-active{
+	left: 100%;
+	opacity: 0;
+}
+
+.animate-view.ng-enter{
+	transition: 1s linear all;
+	opacity: 0;
+}
+
+.animate-view.ng-enter.ng-enter-active{
+	opacity: 1;
 }
 
 
@@ -51,7 +91,7 @@ input[type=number]::-webkit-outer-spin-button{
 .innerGeneral{
 	border: 1px solid black;
 	margin: 4% auto;
-	width: 50%;
+	width: 39%;
 }
 
 #mainInner{
@@ -95,6 +135,7 @@ input[type=number]::-webkit-outer-spin-button{
 
 .deetsInputReal{
 	float: left;
+	width: 95%;
 }
 
 .percentages{
@@ -151,4 +192,6 @@ input[type=number]::-webkit-outer-spin-button{
 .buttonHover:hover{
 	cursor: pointer;
 }
+
+
 

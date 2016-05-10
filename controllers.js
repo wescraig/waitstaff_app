@@ -1,4 +1,4 @@
-angular.module('waitApp', ['ngRoute'])
+angular.module('waitApp', ['ngRoute', 'ngAnimate'])
 .service('calculateMyEarnings', function(){
 
 	//My Earnings Info
@@ -102,7 +102,19 @@ angular.module('waitApp', ['ngRoute'])
 	})
 	.otherwise('/');
 }])
-
+.run(function($rootScope, $location, $timeout){
+	$rootScope.$on('$routeChangeError', function(){
+		$location.path('/error');
+	});
+	$rootScope.$on('$routeChangeStart', function(){
+		$rootScope.isLoading = true;
+	});
+	$rootScope.$on('$routeChangeSuccess', function(){
+		$timeout(function(){
+			$rootScope.isLoading = false;
+		}, 750);
+	});
+})
 .controller('myEarningsCtrl', function(calculateMyEarnings){
 
 	this.tipTotal = calculateMyEarnings.getTipTotal();
